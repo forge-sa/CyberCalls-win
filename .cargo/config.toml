@@ -1,0 +1,6 @@
+[env]
+# With no generator given, cmake-rs overrides CMAKE_<LANG>_FLAGS_RELEASE for MSVC with cc's flags
+# minus every /O option, so whisper.cpp gets built unoptimized (~10x slower than real time).
+# Naming the generator keeps CMake's own /O2 /Ob2 /DNDEBUG. Only applies to MSVC targets;
+# adjust the version if you build with a different Visual Studio.
+CMAKE_GENERATOR_x86_64_pc_windows_msvc = "Visual Studio 17 2022"
